@@ -27,11 +27,11 @@ jobs:
   pool:
     vmImage: 'Ubuntu-16.04'
   # creates an environment if it doesn't exist
-  environment: 'smarthotel-dev'
+  environment: 'env1'
   strategy:
     # default deployment strategy, more coming...
     runOnce:
       deploy:
         steps:
-        - script: echo my first deployment
+        - script: ipconfig
 
