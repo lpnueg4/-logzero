@@ -6,8 +6,32 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-16.04'
-steps:
-- bash: echo "Hello world"
+# pool:
+#   vmImage: 'ubuntu-16.04'
+# steps:
+# - bash: echo "Hello world"
+
+# jobs:
+# - job: myJob
+#   timeoutInMinutes: 10
+#   pool:
+#     vmImage: 'ubuntu-16.04'
+#   steps:
+#   - bash: echo "Hello world"
+
+
+jobs:
+  # track deployments on the environment
+- deployment: DeployWeb
+  displayName: deploy Web App
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  # creates an environment if it doesn't exist
+  environment: 'smarthotel-dev'
+  strategy:
+    # default deployment strategy, more coming...
+    runOnce:
+      deploy:
+        steps:
+        - script: echo my first deployment
 
