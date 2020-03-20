@@ -33,5 +33,5 @@ jobs:
     runOnce:
       deploy:
         steps:
-        - script: ipconfig
+        - script: ifconfig
 
